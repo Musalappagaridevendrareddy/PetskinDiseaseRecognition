@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request
 from model_dog import image_recog_dog
 from model_cat import image_recog_cat
@@ -53,4 +55,5 @@ def index():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port)
