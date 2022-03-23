@@ -1,0 +1,7 @@
+0 Ringworm
+1 Sarcoptic Mi...
+2 Skin Tumour
+3 Ticks
+4 alopecia
+5 Anal Sac
+6 flea
