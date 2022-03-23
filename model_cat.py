@@ -1,7 +1,6 @@
 from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
-import pandas as pd
 
 image=r"download (2).jpg"
 
