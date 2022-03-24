@@ -4,14 +4,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}">
 </head>
 <body>
-    <form class='form-group' action = "/cat">
-        <input class='form-button' type = "submit" value="Upload Cat">
+    <form class='form-group' method='post'>
+        <input class='form-button' type = "submit" name='cat' value="Upload Cat">
     </form>
     <form class='form-group' action = "/dog">
-        <input class='form-button' type = "submit" value="Upload Dog">
+        <input class='form-button' type = "submit" name='dog' value="Upload Dog">
     </form>
     <form class='form-group' action = "/rabbit">
-        <input class='form-button' type = "submit" value="Upload Rabbit">
+        <input class='form-button' type = "submit" name='rabbit' value="Upload Rabbit">
     </form>
 </body>
 </html>
