@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request, url_for, jsonify
+from flask import Flask, render_template, request, url_for
 from werkzeug.utils import redirect
 
 from model_dog import image_recog_dog
@@ -12,16 +12,14 @@ app = Flask(__name__)
 
 @app.route('/cat', methods=['GET', 'POST'])
 def cat():
-	# if request.method == 'POST':
-	# 		file = request.get_json()
-	# 		f = file['file']
-	# 		f.save(f'./data/cat/{f.filename}')
-	# 		cat_data = image_recog_cat(f'./data/cat/{f.filename}')
-	# 		print({'cat_data': cat_data})
-	# 		return redirect(url_for("success", filename=f.filename, data={'cat_data': cat_data}))
-	file = request.json['file']
-	return jsonify(file)
-	# return render_template('cat.html')
+	if request.method == 'POST':
+			file = request.get_json()
+			f = file['file']
+			f.save(f'./data/cat/{f.filename}')
+			cat_data = image_recog_cat(f'./data/cat/{f.filename}')
+			print({'cat_data': cat_data})
+			return redirect(url_for("success", filename=f.filename, data={'cat_data': cat_data}))
+	return render_template('cat.html')
 
 @app.route('/success/<filename>/<data>', methods=['GET', 'POST'])
 def success(filename=None, data=None):
