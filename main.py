@@ -26,7 +26,7 @@ def dog():
 		if request.files['file']:
 			f = request.files['file']
 			f.save(f'./data/dog/{f.filename}')
-			dog_data = image_recog_cat(f'./data/cat/{f.filename}')
+			dog_data = image_recog_dog(f'./data/cat/{f.filename}')
 			print({'dog_data': dog_data})
 			return render_template("success.html", name=f.filename, data={'dog_data': dog_data})
 	return render_template('dog.html')
@@ -38,7 +38,7 @@ def rabbit():
 		if request.files['file']:
 			f = request.files['file']
 			f.save(f'./data/rabbit/{f.filename}')
-			rabbit_data = image_recog_cat(f'./data/cat/{f.filename}')
+			rabbit_data = image_recog_rabbit(f'./data/cat/{f.filename}')
 			print({'rabbit_data':rabbit_data})
 			return render_template("success.html", name=f.filename, data={'rabbit_data':rabbit_data})
 	return render_template('rabbit.html')
@@ -55,5 +55,5 @@ def index():
 
 
 if __name__ == '__main__':
-	port = int(os.environ.get('PORT', 5000))
-	app.run(host='0.0.0.0', port=port)
+	# port = int(os.environ.get('PORT', 5000))
+	app.run(debug=True)

@@ -1,16 +1,17 @@
 <html>
 <head>
     <title>upload</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}">
 </head>
 <body>
-    <form action = "/cat">
-        <input type = "submit" value="Upload Cat">
+    <form class='form-group' action = "/cat">
+        <input class='form-button' type = "submit" value="Upload Cat">
     </form>
-    <form action = "/dog">
-        <input type = "submit" value="Upload Dog">
+    <form class='form-group' action = "/dog">
+        <input class='form-button' type = "submit" value="Upload Dog">
     </form>
-    <form action = "/rabbit">
-        <input type = "submit" value="Upload Rabbit">
+    <form class='form-group' action = "/rabbit">
+        <input class='form-button' type = "submit" value="Upload Rabbit">
     </form>
 </body>
 </html>
