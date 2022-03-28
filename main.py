@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, request, url_for, jsonify
 from werkzeug.utils import redirect
 from decode import decodeImage
@@ -71,7 +73,7 @@ def catPredict():
 	image = request.json['image']
 	decodeImage(image)
 	cat_data = image_recog_cat('data.jpg')
-	return jsonify(cat_data)
+	return jsonify({'output':cat_data})
 
 
 @app.route('/dog/predict', methods=['POST'])
@@ -79,7 +81,7 @@ def dogPredict():
 	image = request.json['image']
 	decodeImage(image)
 	dog_data = image_recog_dog('data.jpg')
-	return jsonify(dog_data)
+	return jsonify({'output':dog_data})
 
 
 @app.route('/dog/predict', methods=['POST'])
@@ -87,7 +89,7 @@ def rabbitPredict():
 	image = request.json['image']
 	decodeImage(image)
 	rabbit_data = image_recog_rabbit('data.jpg')
-	return jsonify(rabbit_data)
+	return jsonify({'output':rabbit_data})
 
 
 if __name__ == '__main__':
