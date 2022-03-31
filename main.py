@@ -84,7 +84,7 @@ def dogPredict():
 	return jsonify({'output':dog_data})
 
 
-@app.route('/dog/predict', methods=['POST'])
+@app.route('/rabbit/predict', methods=['POST'])
 def rabbitPredict():
 	image = request.json['image']
 	decodeImage(image)
@@ -95,3 +95,4 @@ def rabbitPredict():
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))
 	app.run(host='0.0.0.0', port=port)
+	# app.run(debug=True)
