@@ -68,7 +68,7 @@ def index():
 	return render_template('index.html')
 
 
-@app.route('/cat/predict', methods=['POST'])
+@app.route('/cat/predict', methods=['POST','GET'])
 def catPredict():
 	image = request.json['image']
 	decodeImage(image)
